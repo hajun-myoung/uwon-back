@@ -1,0 +1,19 @@
+{
+  "name": "uwon-back",
+  "version": "1.0.0",
+  "description": "backend for uwon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hajun-myoung/uwon-back.git"
+  },
+  "author": "DENVER <fe.dev.denver@gmail.com> (hajun)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hajun-myoung/uwon-back/issues"
+  },
+  "homepage": "https://github.com/hajun-myoung/uwon-back#readme"
+}
