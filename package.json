@@ -2,9 +2,12 @@
   "name": "uwon-back",
   "version": "1.0.0",
   "description": "backend for uwon",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run server",
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,7 @@
   },
   "homepage": "https://github.com/hajun-myoung/uwon-back#readme",
   "dependencies": {
+    "@sindresorhus/is": "^5.3.0",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
