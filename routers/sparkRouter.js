@@ -40,4 +40,14 @@ sparkRouter.post("/spark/create", async function (req, res, next) {
   }
 });
 
+sparkRouter.get("/spark/", async function (req, res, next) {
+  try {
+    const sparks = await sparkHandle.getAll();
+    res.status(200).send(sparks);
+  } catch (error) {
+    console.log(error.message);
+    next(error);
+  }
+});
+
 export { sparkRouter };

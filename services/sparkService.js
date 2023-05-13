@@ -31,6 +31,12 @@ class sparkHandle {
     if (!SPARK) return false;
     return true;
   }
+
+  static async getAll() {
+    const SPARKS = await Spark.findAll();
+    if (SPARKS?.length) return SPARKS;
+    return false;
+  }
 }
 
 export { sparkHandle };
