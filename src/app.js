@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 
 import { sparkRouter } from "../routers/sparkRouter.js";
+import { userRouter } from "../routers/userRouter.js";
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.get("/", (req, res) => {
 });
 
 app.use(sparkRouter);
+app.use(userRouter);
 
 export { app };

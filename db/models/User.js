@@ -1,4 +1,4 @@
-import { UserModel } from "../schemas/user";
+import { UserModel } from "../schemas/user.js";
 
 class User {
   static async create({ NEW_USER }) {
@@ -12,6 +12,9 @@ class User {
   static async findById({ id }) {
     const user = await UserModel.findOne({ id });
     return user;
+  }
+  static async findByUid({ uid }) {
+    const user = await UserModel.findOne({ uid });
   }
 }
 
