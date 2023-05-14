@@ -39,7 +39,7 @@ class userAuth {
 
   static async getUserByIdPassword({ id, password }) {
     const USER = await User.findById({ id });
-    if (!USER) return { error: "no user (id)" };
+    if (!USER) return { error: "no userid" };
 
     const SAVED_PW = USER.pw;
     const IS_CORRECT = await bcrypt.compare(password, SAVED_PW);

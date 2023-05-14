@@ -19,7 +19,10 @@ userRouter.post("/user/signup", async function (req, res, next) {
       password,
       photoUrl,
     });
-    if (NEWUSER.error) throw new Error(NEWUSER.error);
+    if (NEWUSER.error) {
+      if (NEWUSER.error == "duplicated id")
+        res.status(305).send("duplicated ID");
+    }
   } catch (err) {
     console.log(err.message);
     next(err);
@@ -30,7 +33,12 @@ userRouter.post("/user/signin", async function (req, res, next) {
   try {
     const { id, password } = req.body;
     const USER = await userAuth.getUserByIdPassword({ id, password });
-    if (USER.error) throw new Error(USER.error);
+    if (USER.error) {
+      console.log(USER.error);
+      if (USER.error == "no userid") res.status(305).send("incorrect id");
+      else if (USER.error == "incorrect password")
+        res.status(305).send("incorrect pw");
+    }
     res.status(200).send(USER);
   } catch (err) {
     console.log(err.message);
