@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 import { Spark } from "./models/Spark.js";
+import { User } from "./models/User.js";
 
 dotenv.config();
 console.log(process.env.MONGODB_URL);
@@ -21,4 +22,4 @@ db.on("error", (err) => {
   console.log(err);
 });
 
-export { Spark };
+export { Spark, User };
